@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfgrw>
+  <handlers>stream,file</handlers>
+  <datefmt>%Y-%m-%d %H:%M:%S</datefmt>
+  <filename>stage/test-integration/test-xml-conf.log</filename>
+  <filemode>w</filemode>
+  <format>[XML-CFGRW] [%(env)s-%(id)s] %(levelname)s %(message)s</format>
+  <level>info</level>
+  <extras>
+    <env>someenv</env>
+    <id>someid</id>
+  </extras>
+</cfgrw>
