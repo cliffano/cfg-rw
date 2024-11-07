@@ -1,0 +1,12 @@
+{
+  "handlers": "{{ env.CFGRW_HANDLERS }}",
+  "datefmt": "%Y-%m-%d %H:%M:%S",
+  "filename": "stage/test-integration/test-json-conf.log",
+  "filemode": "w",
+  "format": "[JSON-CFGRW] [%(env)s-%(id)s] %(levelname)s %(message)s",
+  "level": "{{ env.CFGRW_LEVEL }}",
+  "extras": {
+    "env": "someenv",
+    "id": "someid"
+  }
+}
