@@ -39,9 +39,9 @@ Create CFGRW object with specific conf_file, and read the values of the configur
 
     cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml')
     values = cfgrw.read(['handlers', 'filemode', 'level'])
-    print(value['handlers']) # will print stream,file
-    print(value['filemode']) # will print w
-    print(value['level']) # will print info
+    print(values['handlers']) # will print stream,file
+    print(values['filemode']) # will print w
+    print(values['level']) # will print info
 
 ### Environment variables
 
@@ -60,9 +60,9 @@ Create CFGRW object without conf_file, and read the value of the configuration p
 
     cfgrw = CFGRW()
     values = cfgrw.read(['handlers', 'filemode', 'level'], { 'prefix': 'CFGRW_' })
-    print(value['handlers']) # will print stream,file
-    print(value['filemode']) # will print w
-    print(value['level']) # will print info
+    print(values['handlers']) # will print stream,file
+    print(values['filemode']) # will print w
+    print(values['level']) # will print info
 
 ### Configuration file with Jinja template
 
@@ -90,9 +90,9 @@ Create CFGRW object with specific conf_file, and read the values of the configur
 
     cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml.j2')
     values = cfgrw.read(['handlers', 'level', 'level'])
-    print(value['handlers']) # will print stream,file
-    print(value['filemode']) # will print w
-    print(value['level']) # will print info
+    print(values['handlers']) # will print stream,file
+    print(values['filemode']) # will print w
+    print(values['level']) # will print info
 
 Configuration
 -------------
