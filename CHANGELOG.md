@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Upgrade PieMaker to 1.4.0
 
+### Removed
+- Remove unnecessary tool.poetry.scripts in pyproject.toml
+
 ## 0.10.1 - 2024-11-07
 ### Fixed
 - Fix publish workflow parameter passing syntax
