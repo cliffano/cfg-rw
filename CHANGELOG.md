@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 ### Changed
-- Upgrade PieMaker to 1.4.0
+- Upgrade PieMaker to 1.10.0
 
 ### Removed
 - Remove unnecessary tool.poetry.scripts in pyproject.toml
