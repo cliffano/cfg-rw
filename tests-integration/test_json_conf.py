@@ -2,24 +2,25 @@
 import unittest
 from cfgrw import CFGRW
 
+
 class TestJsonConf(unittest.TestCase):
 
     def test_read_with_conf_file_having_existing_props_values(self):
-        cfgrw = CFGRW(conf_file='tests-integration/fixtures/cfgrw.json')
-        values = cfgrw.read(['handlers', 'level', 'extras'])
-        self.assertEqual(values['handlers'], 'stream,file')
-        self.assertEqual(values['level'], 'info')
+        cfgrw = CFGRW(conf_file="tests-integration/fixtures/cfgrw.json")
+        values = cfgrw.read(["handlers", "level", "extras"])
+        self.assertEqual(values["handlers"], "stream,file")
+        self.assertEqual(values["level"], "info")
 
     def test_read_with_conf_file_having_inexisting_props_values(self):
-        cfgrw = CFGRW(conf_file='tests-integration/fixtures/cfgrw.json')
-        values = cfgrw.read(['xhandlers', 'xlevel', 'xextras'])
-        self.assertTrue('xhandlers' not in values)
-        self.assertTrue('xlevel' not in values)
-        self.assertTrue('xextras' not in values)
+        cfgrw = CFGRW(conf_file="tests-integration/fixtures/cfgrw.json")
+        values = cfgrw.read(["xhandlers", "xlevel", "xextras"])
+        self.assertTrue("xhandlers" not in values)
+        self.assertTrue("xlevel" not in values)
+        self.assertTrue("xextras" not in values)
 
     def test_read_with_conf_file_having_empty_config(self):
-        cfgrw = CFGRW(conf_file='tests-integration/fixtures/cfgrw-empty.json')
-        values = cfgrw.read(['handlers', 'level', 'extras'])
-        self.assertTrue('handlers' not in values)
-        self.assertTrue('level' not in values)
-        self.assertTrue('extras' not in values)
+        cfgrw = CFGRW(conf_file="tests-integration/fixtures/cfgrw-empty.json")
+        values = cfgrw.read(["handlers", "level", "extras"])
+        self.assertTrue("handlers" not in values)
+        self.assertTrue("level" not in values)
+        self.assertTrue("extras" not in values)
