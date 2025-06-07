@@ -29,6 +29,15 @@
         "statement": 0,
         "warning": 0
       },
+      "cfgrw.__init__": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 37,
+        "warning": 0
+      },
       "cfgrw.formats.xml": {
         "convention": 0,
         "error": 0,
@@ -36,15 +45,6 @@
         "info": 0,
         "refactor": 0,
         "statement": 10,
-        "warning": 0
-      },
-      "cfgrw.formats.json": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 8,
         "warning": 0
       },
       "cfgrw.formats.__init__": {
@@ -56,13 +56,22 @@
         "statement": 0,
         "warning": 0
       },
-      "cfgrw.formats.ini": {
+      "cfgrw.formats.yaml": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
         "info": 0,
         "refactor": 0,
-        "statement": 10,
+        "statement": 9,
+        "warning": 0
+      },
+      "cfgrw.formats.json": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 8,
         "warning": 0
       },
       "cfgrw.formats.envvar": {
@@ -74,76 +83,13 @@
         "statement": 9,
         "warning": 0
       },
-      "cfgrw.formats.yaml": {
+      "cfgrw.formats.ini": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
         "info": 0,
         "refactor": 0,
-        "statement": 9,
-        "warning": 0
-      },
-      "cfgrw.__init__": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 37,
-        "warning": 0
-      },
-      "tests.formats.test_yaml": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 41,
-        "warning": 0
-      },
-      "tests.formats.test_json": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 41,
-        "warning": 0
-      },
-      "tests.formats.test_xml": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 38,
-        "warning": 0
-      },
-      "tests.formats.__init__": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 1,
-        "warning": 0
-      },
-      "tests.formats.test_ini": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 38,
-        "warning": 0
-      },
-      "tests.formats.test_envvar": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 34,
+        "statement": 10,
         "warning": 0
       },
       "tests.__init__": {
@@ -164,6 +110,69 @@
         "statement": 18,
         "warning": 0
       },
+      "tests.formats.test_ini": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 38,
+        "warning": 0
+      },
+      "tests.formats.test_yaml": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 41,
+        "warning": 0
+      },
+      "tests.formats.__init__": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 1,
+        "warning": 0
+      },
+      "tests.formats.test_xml": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 38,
+        "warning": 0
+      },
+      "tests.formats.test_json": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 41,
+        "warning": 0
+      },
+      "tests.formats.test_envvar": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 34,
+        "warning": 0
+      },
+      "tests-integration.test_json_j2_conf": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 11,
+        "warning": 0
+      },
       "tests-integration.test_yaml_conf": {
         "convention": 0,
         "error": 0,
@@ -171,6 +180,15 @@
         "info": 0,
         "refactor": 0,
         "statement": 21,
+        "warning": 0
+      },
+      "tests-integration.test_ini_conf": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 20,
         "warning": 0
       },
       "tests-integration.test_xml_conf": {
@@ -191,25 +209,7 @@
         "statement": 40,
         "warning": 0
       },
-      "tests-integration.test_json_j2_conf": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 11,
-        "warning": 0
-      },
       "tests-integration.test_json_conf": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 20,
-        "warning": 0
-      },
-      "tests-integration.test_ini_conf": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
