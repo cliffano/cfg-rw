@@ -114,9 +114,9 @@ Colophon
 
 Build reports:
 
-* [Lint report](https://cliffano.github.io/cfgrw/lint/pylint/index.html)
-* [Code complexity report](https://cliffano.github.io/cfgrw/complexity/wily/index.html)
-* [Unit tests report](https://cliffano.github.io/cfgrw/test/pytest/index.html)
-* [Test coverage report](https://cliffano.github.io/cfgrw/coverage/coverage/index.html)
-* [Integration tests report](https://cliffano.github.io/cfgrw/test-integration/pytest/index.html)
-* [API Documentation](https://cliffano.github.io/cfgrw/doc/sphinx/index.html)
+* [Lint report](https://cliffano.github.io/cfg-rw/lint/pylint/index.html)
+* [Code complexity report](https://cliffano.github.io/cfg-rw/complexity/wily/index.html)
+* [Unit tests report](https://cliffano.github.io/cfg-rw/test/pytest/index.html)
+* [Test coverage report](https://cliffano.github.io/cfg-rw/coverage/coverage/index.html)
+* [Integration tests report](https://cliffano.github.io/cfg-rw/test-integration/pytest/index.html)
+* [API Documentation](https://cliffano.github.io/cfg-rw/doc/sphinx/index.html)
