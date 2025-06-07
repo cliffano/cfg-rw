@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/cliffano/cfg-rw/workflows/CI/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACI)
 [![Security Status](https://snyk.io/test/github/cliffano/cfg-rw/badge.svg)](https://snyk.io/test/github/cliffano/cfg-rw)
-[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/github/cliffano/cfg-rw)
+[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/pypi/cfgrw)
 [![Published Version](https://img.shields.io/pypi/v/cfgrw.svg)](https://pypi.python.org/pypi/cfgrw)
 <br/>
 
