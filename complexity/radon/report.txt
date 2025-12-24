@@ -1,0 +1,25 @@
+cfgrw/__init__.py - A
+cfgrw/formats/ini.py - A
+cfgrw/formats/yaml.py - A
+cfgrw/formats/json.py - A
+cfgrw/formats/xml.py - A
+cfgrw/formats/envvar.py - A
+cfgrw/formats/__init__.py - A
+cfgrw/__init__.py
+    C 26:0 CFGRW - A (3)
+    M 35:4 CFGRW.read - A (3)
+    M 66:4 CFGRW._id_conf_format - A (3)
+    M 29:4 CFGRW.__init__ - A (1)
+cfgrw/formats/ini.py
+    F 8:0 read_values - A (3)
+cfgrw/formats/yaml.py
+    F 8:0 read_values - A (4)
+cfgrw/formats/json.py
+    F 8:0 read_values - A (3)
+cfgrw/formats/xml.py
+    F 8:0 read_values - A (3)
+cfgrw/formats/envvar.py
+    F 8:0 read_values - A (3)
+
+9 blocks (classes, functions, methods) analyzed.
+Average complexity: A (2.888888888888889)
