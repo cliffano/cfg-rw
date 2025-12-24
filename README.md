@@ -116,7 +116,7 @@ Colophon
 Build reports:
 
 * [Lint report](https://cliffano.github.io/cfg-rw/lint/pylint/index.html)
-* [Code complexity report](https://cliffano.github.io/cfg-rw/complexity/wily/index.html)
+* [Code complexity report](https://cliffano.github.io/cfg-rw/complexity/radon/index.html)
 * [Unit tests report](https://cliffano.github.io/cfg-rw/test/pytest/index.html)
 * [Test coverage report](https://cliffano.github.io/cfg-rw/coverage/coverage/index.html)
 * [Integration tests report](https://cliffano.github.io/cfg-rw/test-integration/pytest/index.html)
