@@ -1,8 +1,9 @@
 <img align="right" src="https://raw.github.com/cliffano/cfg-rw/main/avatar.jpg" alt="Avatar"/>
 
 [![Build Status](https://github.com/cliffano/cfg-rw/workflows/CI/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACI)
-[![Security Status](https://snyk.io/test/github/cliffano/cfg-rw/badge.svg)](https://snyk.io/test/github/cliffano/cfg-rw)
+[![Code Scanning Status](https://github.com/cliffano/cfg-rw/workflows/CodeQL/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACodeQL)
 [![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/pypi/cfgrw)
+[![Security Status](https://snyk.io/test/github/cliffano/cfg-rw/badge.svg)](https://snyk.io/test/github/cliffano/cfg-rw)
 [![Published Version](https://img.shields.io/pypi/v/cfgrw.svg)](https://pypi.python.org/pypi/cfgrw)
 <br/>
 
