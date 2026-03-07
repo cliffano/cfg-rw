@@ -6,10 +6,10 @@ cfgrw/formats/yaml.py - A
 cfgrw/formats/json.py - A
 cfgrw/formats/xml.py - A
 cfgrw/__init__.py
-    C 26:0 CFGRW - A (3)
-    M 35:4 CFGRW.read - A (3)
-    M 66:4 CFGRW._id_conf_format - A (3)
-    M 29:4 CFGRW.__init__ - A (1)
+    C 27:0 CFGRW - A (3)
+    M 36:4 CFGRW.read - A (3)
+    M 67:4 CFGRW._id_conf_format - A (3)
+    M 30:4 CFGRW.__init__ - A (1)
 cfgrw/formats/ini.py
     F 8:0 read_values - A (3)
 cfgrw/formats/envvar.py
