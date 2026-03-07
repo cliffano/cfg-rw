@@ -12,6 +12,8 @@ jobs:
     name: python ${{ matrix.python }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          set-safe-directory: ${{ github.workspace }}
       - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}

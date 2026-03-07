@@ -1,3 +1,13 @@
 ---
 author: Cliffano Subagio
 package_name: cfgrw
+generator:
+  component: python-lib
+  inputs:
+    project_id: cfgrw
+    project_name: CFG-RW
+    project_desc: Python library for reading and writing properties in configuration files
+    author_name: Cliffano Subagio
+    author_email: cliffano@gmail.com
+    github_id: cliffano
+    github_repo: cfg-rw
