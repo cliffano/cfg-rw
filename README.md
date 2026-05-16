@@ -1,24 +1,20 @@
-<img align="right" src="https://raw.github.com/cliffano/cfg-rw/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/cliffano/cfg-rw/workflows/CI/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/cliffano/cfg-rw/workflows/CodeQL/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACodeQL)
 [![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/pypi/cfgrw)
 [![Security Status](https://snyk.io/test/github/cliffano/cfg-rw/badge.svg)](https://snyk.io/test/github/cliffano/cfg-rw)
 [![Published Version](https://img.shields.io/pypi/v/cfgrw.svg)](https://pypi.python.org/pypi/cfgrw)
-<br/>
 
-CFG-RW
-------
+# CFG-RW
 
 CFG-RW is a Python library for reading and writing properties in configuration files.
 
-Installation
-------------
+## Installation
 
     pip3 install cfgrw
 
-Usage
------
+## Usage
 
 ### Configuration file
 
@@ -95,8 +91,7 @@ Create CFGRW object with specific conf_file, and read the values of the configur
     print(values['filemode']) # will print w
     print(values['level']) # will print info
 
-Configuration
--------------
+## Configuration
 
 CFG-RW automatically loads the configuration file based on the extension.
 
@@ -108,8 +103,7 @@ CFG-RW automatically loads the configuration file based on the extension.
 | [YAML](https://yaml.org/) | `.yaml` or `.yml` |
 | [Jinja](https://jinja.palletsprojects.com/en/stable/) | `.ini.j2` or `.json.j2` or `.xml.j2` or `.yaml.j2` or `.yml.j2` |
 
-Colophon
---------
+## Colophon
 
 [Developer's Guide](https://cliffano.github.io/developers_guide.html#python)
 
