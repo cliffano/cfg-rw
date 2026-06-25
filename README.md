@@ -16,7 +16,9 @@ CFG-RW is a Python library for reading and writing properties in configuration f
 
 ## Installation
 
-    pip3 install cfgrw
+```shell
+pip3 install cfgrw
+```
 
 ## Usage
 
@@ -26,23 +28,27 @@ CFG-RW can read configuration properties from YAML, JSON, INI, and XML files.
 
 Create a configuration file, e.g. `cfgrw.yaml`:
 
-    ---
-    handlers: "stream,file"
-    datefmt: "%Y-%m-%d %H:%M:%S"
-    filename: "stage/test-integration/test-yaml-conf.log"
-    filemode: "w"
-    format: "%(levelname)s %(message)s"
-    level: "info"
+```yaml
+---
+handlers: "stream,file"
+datefmt: "%Y-%m-%d %H:%M:%S"
+filename: "stage/test-integration/test-yaml-conf.log"
+filemode: "w"
+format: "%(levelname)s %(message)s"
+level: "info"
+```
 
 Create CFGRW object with specific conf_file, and read the values of the configuration properties:
 
-    from cfgrw import CFGRW
+```python
+from cfgrw import CFGRW
 
-    cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml')
-    values = cfgrw.read(['handlers', 'filemode', 'level'])
-    print(values['handlers']) # will print stream,file
-    print(values['filemode']) # will print w
-    print(values['level']) # will print info
+cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml')
+values = cfgrw.read(['handlers', 'filemode', 'level'])
+print(values['handlers']) # will print stream,file
+print(values['filemode']) # will print w
+print(values['level']) # will print info
+```
 
 ### Environment variables
 
@@ -50,20 +56,24 @@ CFG-RW can also read configuration properties from environment variables with a 
 
 For example, here are the environment variables with prefix `CFGRW_` :
 
-    export CFGRW_HANDLERS="stream,file"
-    export CFGRW_DATEFMT="%Y-%m-%d %H:%M:%S"
-    export CFGRW_FILENAME="stage/test-integration/test-yaml-conf.log"
-    export CFGRW_FILEMODE="w"
-    export CFGRW_FORMAT="%(levelname)s %(message)s"
-    export CFGRW_LEVEL="info"
+```shell
+export CFGRW_HANDLERS="stream,file"
+export CFGRW_DATEFMT="%Y-%m-%d %H:%M:%S"
+export CFGRW_FILENAME="stage/test-integration/test-yaml-conf.log"
+export CFGRW_FILEMODE="w"
+export CFGRW_FORMAT="%(levelname)s %(message)s"
+export CFGRW_LEVEL="info"
+```
 
 Create CFGRW object without conf_file, and read the value of the configuration properties with specified prefix:
 
-    cfgrw = CFGRW()
-    values = cfgrw.read(['handlers', 'filemode', 'level'], { 'prefix': 'CFGRW_' })
-    print(values['handlers']) # will print stream,file
-    print(values['filemode']) # will print w
-    print(values['level']) # will print info
+```python
+cfgrw = CFGRW()
+values = cfgrw.read(['handlers', 'filemode', 'level'], { 'prefix': 'CFGRW_' })
+print(values['handlers']) # will print stream,file
+print(values['filemode']) # will print w
+print(values['level']) # will print info
+```
 
 ### Configuration file with Jinja template
 
@@ -71,29 +81,35 @@ CFG-RW can read configuration properties with YAML, JSON, INI, and XML within a 
 
 Create a configuration Jinja template, e.g. `cfgrw.yaml.j2`:
 
-    ---
-    handlers: "{{ env.FOOBAR_HANDLERS }}"
-    datefmt: "%Y-%m-%d %H:%M:%S"
-    filename: "stage/test-integration/test-yaml-conf.log"
-    filemode: "{{ env.FOOBAR_FILEMODE }}"
-    format: "%(levelname)s %(message)s"
-    level: "{{ env.FOOBAR_LEVEL }}"
+```yaml
+---
+handlers: "{{ env.FOOBAR_HANDLERS }}"
+datefmt: "%Y-%m-%d %H:%M:%S"
+filename: "stage/test-integration/test-yaml-conf.log"
+filemode: "{{ env.FOOBAR_FILEMODE }}"
+format: "%(levelname)s %(message)s"
+level: "{{ env.FOOBAR_LEVEL }}"
+```
 
 and the following environment variables:
 
-    export FOOBAR_HANDLERS="stream,file"
-    export FOOBAR_FILEMODE="w"
-    export FOOBAR_LEVEL="info"
+```shell
+export FOOBAR_HANDLERS="stream,file"
+export FOOBAR_FILEMODE="w"
+export FOOBAR_LEVEL="info"
+```
 
 Create CFGRW object with specific conf_file, and read the values of the configuration properties:
 
-    from cfgrw import CFGRW
+```python
+from cfgrw import CFGRW
 
-    cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml.j2')
-    values = cfgrw.read(['handlers', 'level', 'level'])
-    print(values['handlers']) # will print stream,file
-    print(values['filemode']) # will print w
-    print(values['level']) # will print info
+cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml.j2')
+values = cfgrw.read(['handlers', 'level', 'level'])
+print(values['handlers']) # will print stream,file
+print(values['filemode']) # will print w
+print(values['level']) # will print info
+```
 
 ## Configuration
 
