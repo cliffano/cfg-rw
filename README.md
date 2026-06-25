@@ -75,6 +75,38 @@ print(values['filemode']) # will print w
 print(values['level']) # will print info
 ```
 
+### Configuration file with environment variable fallback
+
+If a property is not found in the configuration file, CFG-RW will fall back to reading it from an environment variable. This requires a `prefix` to be passed in the options.
+
+For example, given a configuration file `cfgrw.yaml` that only contains `handlers` and `level`:
+
+```yaml
+---
+handlers: "stream,file"
+level: "info"
+```
+
+and the following environment variable for the missing `filemode` property:
+
+```shell
+export CFGRW_FILEMODE="w"
+```
+
+CFG-RW will read `handlers` and `level` from the file, then fall back to the environment variable for `filemode`:
+
+```python
+from cfgrw import CFGRW
+
+cfgrw = CFGRW(conf_file='path/to/cfgrw.yaml')
+values = cfgrw.read(['handlers', 'filemode', 'level'], { 'prefix': 'CFGRW_' })
+print(values['handlers']) # will print stream,file
+print(values['filemode']) # will print w (from environment variable)
+print(values['level'])    # will print info
+```
+
+If a property is missing from both the configuration file and the environment variables, it will simply be absent from the returned `values` dict — no error is raised.
+
 ### Configuration file with Jinja template
 
 CFG-RW can read configuration properties with YAML, JSON, INI, and XML within a Jinja template. You just need to add a `.j2` to the configuration file name.

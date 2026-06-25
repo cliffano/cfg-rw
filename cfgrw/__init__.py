@@ -61,7 +61,7 @@ class CFGRW:
                 with open(self.conf_file, "r", encoding="utf-8") as conf_stream:
                     values = read_fn(conf_stream, props, opts)
             missing_props = [p for p in props if p not in values]
-            if missing_props:
+            if missing_props and "prefix" in opts:
                 values.update(read_envvar_values(missing_props, opts))
         else:
             values = read_envvar_values(props, opts)
