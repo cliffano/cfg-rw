@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add env var fallback when prop is not found in conf file
 
 ### Changed
-- Upgrade PieMaker to 2.3.1
+- Upgrade PieMaker to 2.5.0
 
 ## 1.1.0 - 2026-05-13
 ### Added

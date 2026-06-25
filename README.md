@@ -1,10 +1,14 @@
+<!-- BEGIN:AVATAR -->
 ![Avatar](avatar.jpg)
+<!-- END:AVATAR -->
 
+<!-- BEGIN:BADGES -->
 [![Build Status](https://github.com/cliffano/cfg-rw/workflows/CI/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/cliffano/cfg-rw/workflows/CodeQL/badge.svg)](https://github.com/cliffano/cfg-rw/actions?query=workflow%3ACodeQL)
-[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/pypi/cfgrw)
+[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/cfgrw)](https://libraries.io/github/cliffano/cfg-rw)
 [![Security Status](https://snyk.io/test/github/cliffano/cfg-rw/badge.svg)](https://snyk.io/test/github/cliffano/cfg-rw)
 [![Published Version](https://img.shields.io/pypi/v/cfgrw.svg)](https://pypi.python.org/pypi/cfgrw)
+<!-- END:BADGES -->
 
 # CFG-RW
 
@@ -105,13 +109,17 @@ CFG-RW automatically loads the configuration file based on the extension.
 
 ## Colophon
 
-[Developer's Guide](https://cliffano.github.io/developers_guide.html#python)
+<!-- BEGIN:DEVELOPERS_GUIDE -->
+[Developer's Guide](https://cliffano.github.io/developers-guide-python.html)
+<!-- END:DEVELOPERS_GUIDE -->
 
+<!-- BEGIN:BUILD_REPORTS -->
 Build reports:
 
-* [Lint report](https://cliffano.github.io/cfg-rw/lint/pylint/index.html)
-* [Code complexity report](https://cliffano.github.io/cfg-rw/complexity/radon/index.html)
-* [Unit tests report](https://cliffano.github.io/cfg-rw/test/pytest/index.html)
-* [Test coverage report](https://cliffano.github.io/cfg-rw/coverage/coverage/index.html)
-* [Integration tests report](https://cliffano.github.io/cfg-rw/test-integration/pytest/index.html)
-* [API Documentation](https://cliffano.github.io/cfg-rw/doc/sphinx/index.html)
+* [Lint report](https://cliffano.github.io/cfgrw/lint/pylint/index.html)
+* [Code complexity report](https://cliffano.github.io/cfgrw/complexity/radon/cc.txt)
+* [Unit tests report](https://cliffano.github.io/cfgrw/test/pytest/index.html)
+* [Test coverage report](https://cliffano.github.io/cfgrw/coverage/coverage/index.html)
+* [Integration tests report](https://cliffano.github.io/cfgrw/test-integration/pytest/index.html)
+* [API Documentation](https://cliffano.github.io/cfgrw/doc/sphinx/index.html)
+<!-- END:BUILD_REPORTS -->
