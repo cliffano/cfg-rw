@@ -1,5 +1,5 @@
 .. cfgrw documentation master file, created by
-   sphinx-quickstart on Fri Jun 26 11:58:10 2026.
+   sphinx-quickstart on Fri Jun 26 12:02:59 2026.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
