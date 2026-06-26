@@ -1,4 +1,4 @@
-# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals,protected-access
 from unittest.mock import patch, mock_open
 import unittest
 from cfgrw import CFGRW
@@ -120,7 +120,10 @@ class TestCFGRW(unittest.TestCase):
     @patch("cfgrw.FileSystemLoader")
     @patch("cfgrw.read_json_values")
     def test_read_with_j2_conf_file(
-        self, func_read_json_values, mock_file_system_loader, mock_environment  # pylint: disable=unused-argument
+        self,
+        func_read_json_values,
+        mock_file_system_loader,
+        mock_environment,  # pylint: disable=unused-argument
     ):
 
         mock_environment.return_value.get_template.return_value.render.return_value = (
@@ -154,6 +157,6 @@ class TestCFGRW(unittest.TestCase):
     def test_id_conf_format_with_unknown_extension_returns_none(self):
 
         cfgrw = CFGRW()
-        result = cfgrw._id_conf_format("somefile.unknown")  # pylint: disable=protected-access
+        result = cfgrw._id_conf_format("somefile.unknown")
 
         assert result is None
