@@ -115,3 +115,45 @@ class TestCFGRW(unittest.TestCase):
         func_read_envvar_values.assert_called_once_with(
             ["level"], {"section": "cfgrw", "prefix": "APP_"}
         )
+
+    @patch("cfgrw.Environment")
+    @patch("cfgrw.FileSystemLoader")
+    @patch("cfgrw.read_json_values")
+    def test_read_with_j2_conf_file(
+        self, func_read_json_values, mock_file_system_loader, mock_environment  # pylint: disable=unused-argument
+    ):
+
+        mock_environment.return_value.get_template.return_value.render.return_value = (
+            '{"handlers": "somehandler"}'
+        )
+        func_read_json_values.return_value = {"handlers": "somehandler"}
+
+        cfgrw = CFGRW(conf_file="somedir/somefile.json.j2")
+        cfgrw.conf_formats["json"]["read_fn"] = func_read_json_values
+
+        values = cfgrw.read(["handlers"], {"section": "cfgrw"})
+
+        assert values == {"handlers": "somehandler"}
+        mock_file_system_loader.assert_called_once_with("somedir")
+        mock_environment.return_value.get_template.return_value.render.assert_called_once()
+        func_read_json_values.assert_called_once()
+
+    @patch("cfgrw.read_envvar_values")
+    def test_read_without_conf_file_reads_from_envvar(self, func_read_envvar_values):
+
+        func_read_envvar_values.return_value = {"handlers": "somehandler"}
+
+        cfgrw = CFGRW()
+        values = cfgrw.read(["handlers"], {"prefix": "APP_"})
+
+        assert values == {"handlers": "somehandler"}
+        func_read_envvar_values.assert_called_once_with(
+            ["handlers"], {"prefix": "APP_"}
+        )
+
+    def test_id_conf_format_with_unknown_extension_returns_none(self):
+
+        cfgrw = CFGRW()
+        result = cfgrw._id_conf_format("somefile.unknown")  # pylint: disable=protected-access
+
+        assert result is None
