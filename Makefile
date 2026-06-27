@@ -4,7 +4,7 @@
 ################################################################
 
 # PieMaker's version number
-PIEMAKER_VERSION = 2.7.0
+PIEMAKER_VERSION = 2.7.1
 
 ################################################################
 # User configuration variables
@@ -51,7 +51,11 @@ endef
 
 define deps_extra
 	@if command -v apt-get > /dev/null 2>&1; then \
-		$(MAKE) deps-extra-apt; \
+		if [ "$$(id -u)" = "0" ]; then \
+			$(MAKE) deps-extra-apt; \
+		else \
+			sudo $(MAKE) deps-extra-apt; \
+		fi; \
 	fi
 endef
 
