@@ -35,23 +35,157 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
-<section id="cfgrw-formats-envvar-module">
-<h2>cfgrw.formats.envvar module<a class="headerlink" href="#cfgrw-formats-envvar-module" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats.envvar">
+<span id="cfgrw-formats-envvar-module"></span><h2>cfgrw.formats.envvar module<a class="headerlink" href="#module-cfgrw.formats.envvar" title="Link to this heading">¶</a></h2>
+<p>Environment variable configuration reader.</p>
+<p>Reference: <a class="reference external" href="https://en.wikipedia.org/wiki/Environment_variable">https://en.wikipedia.org/wiki/Environment_variable</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cfgrw.formats.envvar.read_values">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.formats.envvar.</span></span><span class="sig-name descname"><span class="pre">read_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw/formats/envvar.html#read_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.formats.envvar.read_values" title="Link to this definition">¶</a></dt>
+<dd><p>Read property values from environment variables.</p>
+<p>Each property name is upper-cased and prepended with <code class="docutils literal notranslate"><span class="pre">opts[&quot;prefix&quot;]</span></code> to form
+the environment variable name, e.g. property <code class="docutils literal notranslate"><span class="pre">level</span></code> with prefix <code class="docutils literal notranslate"><span class="pre">APP_</span></code>
+resolves to <code class="docutils literal notranslate"><span class="pre">APP_LEVEL</span></code>. Properties whose environment variable is not set are
+omitted from the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – <p>Reader options. Required key:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix</span></code> <em>(str)</em> — prefix prepended to each upper-cased property name.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their environment variable values for all
+found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="cfgrw-formats-ini-module">
-<h2>cfgrw.formats.ini module<a class="headerlink" href="#cfgrw-formats-ini-module" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats.ini">
+<span id="cfgrw-formats-ini-module"></span><h2>cfgrw.formats.ini module<a class="headerlink" href="#module-cfgrw.formats.ini" title="Link to this heading">¶</a></h2>
+<p>INI file configuration reader.</p>
+<p>Reference: <a class="reference external" href="https://en.wikipedia.org/wiki/INI_file">https://en.wikipedia.org/wiki/INI_file</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cfgrw.formats.ini.read_values">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.formats.ini.</span></span><span class="sig-name descname"><span class="pre">read_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw/formats/ini.html#read_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.formats.ini.read_values" title="Link to this definition">¶</a></dt>
+<dd><p>Read property values from an INI file.</p>
+<p>Only properties present under the specified section are included in the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conf_stream</strong> (<em>IO</em><em>[</em><em>str</em><em>]</em>) – Readable stream of the INI file content.</p></li>
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – <p>Reader options. Required key:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">section</span></code> <em>(str)</em> — INI section name to read properties from.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their values for all found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="cfgrw-formats-json-module">
-<h2>cfgrw.formats.json module<a class="headerlink" href="#cfgrw-formats-json-module" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats.json">
+<span id="cfgrw-formats-json-module"></span><h2>cfgrw.formats.json module<a class="headerlink" href="#module-cfgrw.formats.json" title="Link to this heading">¶</a></h2>
+<p>JSON file configuration reader.</p>
+<p>Reference: <a class="reference external" href="https://www.json.org/">https://www.json.org/</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cfgrw.formats.json.read_values">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.formats.json.</span></span><span class="sig-name descname"><span class="pre">read_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw/formats/json.html#read_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.formats.json.read_values" title="Link to this definition">¶</a></dt>
+<dd><p>Read property values from a JSON file.</p>
+<p>Only top-level keys matching the requested property names are included in the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conf_stream</strong> (<em>IO</em><em>[</em><em>str</em><em>]</em>) – Readable stream of the JSON file content.</p></li>
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – Reader options (unused for JSON).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their values for all found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="cfgrw-formats-xml-module">
-<h2>cfgrw.formats.xml module<a class="headerlink" href="#cfgrw-formats-xml-module" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats.xml">
+<span id="cfgrw-formats-xml-module"></span><h2>cfgrw.formats.xml module<a class="headerlink" href="#module-cfgrw.formats.xml" title="Link to this heading">¶</a></h2>
+<p>XML file configuration reader.</p>
+<p>Reference: <a class="reference external" href="https://www.w3.org/XML/">https://www.w3.org/XML/</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cfgrw.formats.xml.read_values">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.formats.xml.</span></span><span class="sig-name descname"><span class="pre">read_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw/formats/xml.html#read_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.formats.xml.read_values" title="Link to this definition">¶</a></dt>
+<dd><p>Read property values from an XML file.</p>
+<p>Each property name is matched against direct child elements of the root node.
+Only elements that exist are included in the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conf_stream</strong> (<em>IO</em><em>[</em><em>str</em><em>]</em>) – Readable stream of the XML file content.</p></li>
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – Reader options (unused for XML).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their element text values for all found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="cfgrw-formats-yaml-module">
-<h2>cfgrw.formats.yaml module<a class="headerlink" href="#cfgrw-formats-yaml-module" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats.yaml">
+<span id="cfgrw-formats-yaml-module"></span><h2>cfgrw.formats.yaml module<a class="headerlink" href="#module-cfgrw.formats.yaml" title="Link to this heading">¶</a></h2>
+<p>YAML file configuration reader.</p>
+<p>Reference: <a class="reference external" href="https://yaml.org/">https://yaml.org/</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cfgrw.formats.yaml.read_values">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.formats.yaml.</span></span><span class="sig-name descname"><span class="pre">read_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw/formats/yaml.html#read_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.formats.yaml.read_values" title="Link to this definition">¶</a></dt>
+<dd><p>Read property values from a YAML file.</p>
+<p>Only top-level keys matching the requested property names are included in the result.
+An empty YAML document returns an empty dict without error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conf_stream</strong> (<em>IO</em><em>[</em><em>str</em><em>]</em>) – Readable stream of the YAML file content.</p></li>
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – Reader options (unused for YAML).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their values for all found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw.formats">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cfgrw.formats" title="Link to this heading">¶</a></h2>
+<p>Configuration format readers for INI, JSON, XML, YAML, and environment variables.</p>
 </section>
 </section>
 
@@ -78,17 +212,17 @@
 <li class="toctree-l2 current"><a class="reference internal" href="cfgrw.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">cfgrw.formats package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfgrw-formats-envvar-module">cfgrw.formats.envvar module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfgrw-formats-ini-module">cfgrw.formats.ini module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfgrw-formats-json-module">cfgrw.formats.json module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfgrw-formats-xml-module">cfgrw.formats.xml module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfgrw-formats-yaml-module">cfgrw.formats.yaml module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats.envvar">cfgrw.formats.envvar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats.ini">cfgrw.formats.ini module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats.json">cfgrw.formats.json module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats.xml">cfgrw.formats.xml module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats.yaml">cfgrw.formats.yaml module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cfgrw.formats">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.html#module-cfgrw">Module contents</a></li>
 </ul>
 </li>
 </ul>

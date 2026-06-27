@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cfgrw.formats.xml &#8212; cfgrw  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=cb25574f" />
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for cfgrw.formats.xml</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;XML file configuration reader.</span>
+
+<span class="sd">Reference: https://www.w3.org/XML/</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+
+<div class="viewcode-block" id="read_values">
+<a class="viewcode-back" href="../../../cfgrw.formats.html#cfgrw.formats.xml.read_values">[docs]</a>
+<span class="k">def</span> <span class="nf">read_values</span><span class="p">(</span>
+    <span class="n">conf_stream</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">props</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">opts</span><span class="p">:</span> <span class="nb">dict</span>  <span class="c1"># pylint: disable=unused-argument</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read property values from an XML file.</span>
+
+<span class="sd">    Each property name is matched against direct child elements of the root node.</span>
+<span class="sd">    Only elements that exist are included in the result.</span>
+
+<span class="sd">    :param conf_stream: Readable stream of the XML file content.</span>
+<span class="sd">    :type conf_stream: IO[str]</span>
+<span class="sd">    :param props: Property names to read.</span>
+<span class="sd">    :type props: list[str]</span>
+<span class="sd">    :param opts: Reader options (unused for XML).</span>
+<span class="sd">    :type opts: dict</span>
+<span class="sd">    :returns: Mapping of property names to their element text values for all found properties.</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">xml_tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">conf_stream</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+    <span class="n">conf_xml</span> <span class="o">=</span> <span class="n">xml_tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">props</span><span class="p">:</span>
+        <span class="n">xml_elem</span> <span class="o">=</span> <span class="n">conf_xml</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xml_elem</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">xml_elem</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">return</span> <span class="n">values</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">cfgrw</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../cfgrw.html">cfgrw package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  <li><a href="../../cfgrw.html">cfgrw</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2026, Cliffano Subagio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -39,19 +39,85 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cfgrw.formats.html">cfgrw.formats package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#cfgrw-formats-envvar-module">cfgrw.formats.envvar module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#cfgrw-formats-ini-module">cfgrw.formats.ini module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#cfgrw-formats-json-module">cfgrw.formats.json module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#cfgrw-formats-xml-module">cfgrw.formats.xml module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#cfgrw-formats-yaml-module">cfgrw.formats.yaml module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats.envvar">cfgrw.formats.envvar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html#cfgrw.formats.envvar.read_values"><code class="docutils literal notranslate"><span class="pre">read_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats.ini">cfgrw.formats.ini module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html#cfgrw.formats.ini.read_values"><code class="docutils literal notranslate"><span class="pre">read_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats.json">cfgrw.formats.json module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html#cfgrw.formats.json.read_values"><code class="docutils literal notranslate"><span class="pre">read_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats.xml">cfgrw.formats.xml module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html#cfgrw.formats.xml.read_values"><code class="docutils literal notranslate"><span class="pre">read_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats.yaml">cfgrw.formats.yaml module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html#cfgrw.formats.yaml.read_values"><code class="docutils literal notranslate"><span class="pre">read_values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cfgrw.formats.html#module-cfgrw.formats">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<section id="module-cfgrw">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cfgrw" title="Link to this heading">¶</a></h2>
+<p>Python library for reading configuration properties from files and environment variables.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="cfgrw.CFGRW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cfgrw.</span></span><span class="sig-name descname"><span class="pre">CFGRW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cfgrw.html#CFGRW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.CFGRW" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Reader for configuration properties from files and environment variables.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cfgrw.CFGRW.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/cfgrw.html#CFGRW.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cfgrw.CFGRW.read" title="Link to this definition">¶</a></dt>
+<dd><p>Read the values of a list of properties.</p>
+<p>When a configuration file is set, properties are read from it first. Any
+properties absent from the file are looked up as environment variables when
+<code class="docutils literal notranslate"><span class="pre">prefix</span></code> is provided in <code class="docutils literal notranslate"><span class="pre">opts</span></code>. When no configuration file is set, all
+properties are read from environment variables.</p>
+<p>Properties not found in any source are silently omitted from the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>props</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Property names to read.</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – <p>Reader options. Recognised keys:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">section</span></code> <em>(str)</em> — section name, required for INI files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix</span></code> <em>(str)</em> — environment variable prefix, required for env var reads
+and env var fallback.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mapping of property names to their values for all found properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="cfgrw.CONF_FORMATS">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.</span></span><span class="sig-name descname"><span class="pre">CONF_FORMATS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'ini':</span> <span class="pre">{'ext':</span> <span class="pre">['.ini'],</span> <span class="pre">'read_fn':</span> <span class="pre">&lt;function</span> <span class="pre">read_values&gt;},</span> <span class="pre">'json':</span> <span class="pre">{'ext':</span> <span class="pre">['.json'],</span> <span class="pre">'read_fn':</span> <span class="pre">&lt;function</span> <span class="pre">read_values&gt;},</span> <span class="pre">'xml':</span> <span class="pre">{'ext':</span> <span class="pre">['.xml'],</span> <span class="pre">'read_fn':</span> <span class="pre">&lt;function</span> <span class="pre">read_values&gt;},</span> <span class="pre">'yaml':</span> <span class="pre">{'ext':</span> <span class="pre">['.yaml',</span> <span class="pre">'.yml'],</span> <span class="pre">'read_fn':</span> <span class="pre">&lt;function</span> <span class="pre">read_values&gt;}}</span></em><a class="headerlink" href="#cfgrw.CONF_FORMATS" title="Link to this definition">¶</a></dt>
+<dd><p>dict: Supported configuration formats mapped to their file extensions and reader functions.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="cfgrw.JINJA_EXT">
+<span class="sig-prename descclassname"><span class="pre">cfgrw.</span></span><span class="sig-name descname"><span class="pre">JINJA_EXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'.j2'</span></em><a class="headerlink" href="#cfgrw.JINJA_EXT" title="Link to this definition">¶</a></dt>
+<dd><p>str: File extension suffix that marks a Jinja2 template.</p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -79,7 +145,15 @@
 <li class="toctree-l3"><a class="reference internal" href="cfgrw.formats.html">cfgrw.formats package</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cfgrw">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cfgrw.CFGRW"><code class="docutils literal notranslate"><span class="pre">CFGRW</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cfgrw.CFGRW.read"><code class="docutils literal notranslate"><span class="pre">CFGRW.read()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cfgrw.CONF_FORMATS"><code class="docutils literal notranslate"><span class="pre">CONF_FORMATS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cfgrw.JINJA_EXT"><code class="docutils literal notranslate"><span class="pre">JINJA_EXT</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
